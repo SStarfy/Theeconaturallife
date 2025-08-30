@@ -1,0 +1,35 @@
+:root {
+  --green: #2e7d32;
+  --light-green: #a5d6a7;
+  --beige: #f5f5dc;
+  --gray: #4b5563;
+  --white: #ffffff;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--beige);
+  color: var(--gray);
+}
+
+h1, h2, h3 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
