@@ -27,8 +27,6 @@ export default function Home() {
             View on Amazon
           </a>
         </div>
-
-        {/* add more product blocks here if you want */}
       </section>
 
       <footer className="mt-8 text-center text-sm text-gray-500">
