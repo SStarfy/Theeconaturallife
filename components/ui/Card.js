@@ -1,20 +1,25 @@
-export default function Card({ title, description, href = "#" }) {
+import Card from "@/components/ui/Card";
+
+export default function Home() {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: "block",
-        background: "var(--white)",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-        transition: "transform 0.15s ease, box-shadow 0.15s ease"
-      }}
-    >
-      <h3 style={{ marginBottom: "8px" }}>{title}</h3>
-      <p style={{ margin: 0, color: "#555" }}>{description}</p>
-    </a>
+    <main style={{ display: "grid", gap: "20px" }}>
+      <Card
+        title="Vtopmart Glass Meal-Prep Containers (4-Pack) with Bamboo Lids"
+        description="Microwave, oven, freezer safe borosilicate glass with airtight bamboo lids—BPA-free everyday essential."
+        href="https://amzn.to/429XdKp"
+      />
+
+      <Card
+        title="Yomious 20oz Glass Water Bottle with Bamboo Lid"
+        description="Leak-proof borosilicate bottle with bamboo lid and silicone seal—eco on-the-go hydration."
+        href="https://amzn.to/EXAMPLE"
+      />
+
+      <Card
+        title="HomArtist Borosilicate Glass Canisters with Bamboo Lids"
+        description="Durable glass canisters with airtight bamboo lids—perfect for pantry storage."
+        href="https://amzn.to/EXAMPLE"
+      />
+    </main>
   );
 }
