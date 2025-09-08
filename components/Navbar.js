@@ -2,7 +2,9 @@ export default function Navbar() {
   return (
     <div className="w-full shadow-md bg-white px-6 py-4 flex items-center justify-between">
       {/* Logo */}
-      <div className="text-2xl font-bold text-green-700">EcoNaturalLife</div>
+      <a href="/" className="text-2xl font-bold text-green-700 hover:text-green-800">
+        EcoNaturalLife
+      </a>
 
       {/* Search Bar */}
       <div className="flex-1 mx-6 max-w-md">
