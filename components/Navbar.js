@@ -10,6 +10,16 @@ export default function Navbar() {
           <span className="tagline">Plastic-free picks that last</span>
         </a>
 
+        {/* Search */}
+        <form className="search" action="/search" method="get" role="search">
+          <input
+            type="search"
+            name="q"
+            placeholder="Search products…"
+            aria-label="Search products"
+          />
+        </form>
+
         {/* Navigation */}
         <nav className="links">
           <a href="/cleaning">Cleaning</a>
@@ -21,46 +31,75 @@ export default function Navbar() {
       </div>
 
       <style jsx>{`
+        /* ========== BAR ========== */
         .navbar {
           position: sticky;
           top: 0;
           z-index: 50;
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(255, 255, 255, 0.96);
           backdrop-filter: blur(6px);
           border-bottom: 1px solid #e5e7eb;
         }
         .inner {
-          max-width: 1100px;
-          margin: 0 auto;
-          height: 70px;
-          padding: 0 24px;
-          display: flex;
+          /* edge-to-edge feel */
+          max-width: none;
+          width: 100%;
+          height: 60px;                /* tighter height */
+          padding: 0 12px;             /* closer to edges */
+          display: grid;
+          grid-template-columns: auto minmax(200px, 520px) auto;
           align-items: center;
-          justify-content: space-between;
+          gap: 12px;
         }
+
+        /* ========== BRAND ========== */
         .brand {
           display: flex;
           flex-direction: column;
-          line-height: 1.1;
+          line-height: 1.05;
           text-decoration: none;
         }
         .title {
-          font-size: 1.5rem;
+          font-size: 1.28rem;
           font-weight: 800;
           color: #111827;
           letter-spacing: -0.01em;
         }
-        .accent {
-          color: #2e7d32;
-        }
+        .accent { color: #2e7d32; }
         .tagline {
-          margin-top: 2px;
-          font-size: 0.8rem;
+          margin-top: 0;
+          font-size: 0.76rem;
           color: #6b7280;
         }
+
+        /* ========== SEARCH ========== */
+        .search {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+        .search input {
+          width: 100%;
+          height: 36px;
+          padding: 0 12px;
+          border: 1px solid #d1d5db;
+          border-radius: 10px;
+          background: #ffffff;
+          color: #111827;
+          font-size: 0.95rem;
+          outline: none;
+          transition: border-color 160ms ease, box-shadow 160ms ease;
+        }
+        .search input::placeholder { color: #9ca3af; }
+        .search input:focus {
+          border-color: #22c55e;
+          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+        }
+
+        /* ========== LINKS ========== */
         .links {
           display: flex;
-          gap: 22px;
+          gap: 16px;                    /* slightly tighter gap */
           font-size: 0.95rem;
           font-weight: 500;
           color: #374151;
@@ -68,14 +107,43 @@ export default function Navbar() {
         .links a {
           text-decoration: none;
           color: inherit;
-          padding: 6px 4px;
-          transition: color 0.2s ease;
+          padding: 6px 6px;
+          border-radius: 8px;
+          position: relative;
+          transition: color 0.18s ease;
         }
-        .links a:hover {
-          color: #166534;
+        .links a:hover { color: #166534; }
+        /* slim underline animation */
+        .links a::after {
+          content: "";
+          position: absolute;
+          left: 6px;
+          right: 6px;
+          bottom: 4px;
+          height: 2px;
+          background: #16a34a;
+          border-radius: 999px;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 180ms ease;
+          opacity: 0.9;
+        }
+        .links a:hover::after { transform: scaleX(1); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+          .inner {
+            grid-template-columns: 1fr 1fr;
+            height: 58px;
+            padding: 0 10px;
+            gap: 10px;
+          }
+          .search { grid-column: 1 / -1; order: 3; }
+          .links { display: none; } /* keep it clean on small screens */
+          .tagline { display: none; } /* save space */
+          .title { font-size: 1.2rem; }
         }
       `}</style>
     </header>
   )
 }
-
