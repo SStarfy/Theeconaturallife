@@ -6,12 +6,14 @@
   --white: #ffffff;
 }
 
+/* Global base styles */
 html, body {
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--beige);
   color: var(--gray);
+  overflow-x: hidden; /* prevent horizontal scrolling */
 }
 
 h1, h2, h3 {
@@ -32,6 +34,11 @@ main {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+/* Ensure padding and border are included in element width calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 /* Override navbar inner size to prevent clipping */
