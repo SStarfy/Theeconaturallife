@@ -59,14 +59,14 @@ export default function Home() {
         </p>
         <p>
           <a
-            href="/privacy"
+            href="/privacy-policy"
             style={{ margin: "0 10px", color: "#2f855a", textDecoration: "none" }}
           >
             Privacy Policy
           </a>
           |
           <a
-            href="/terms"
+            href="/terms-of-service"
             style={{ margin: "0 10px", color: "#2f855a", textDecoration: "none" }}
           >
             Terms of Service
