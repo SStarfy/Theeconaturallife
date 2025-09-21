@@ -106,8 +106,10 @@ export default function Navbar() {
           gap: 16px;
           font-size: 0.95rem;
           font-weight: 500;
+            flex-wrap: wrap;
+            
           color: #374151;
-          white-space: nowrap;
+       
         }
         .links a {
           text-decoration: none;
