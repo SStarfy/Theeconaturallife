@@ -27,8 +27,7 @@ export default function Navbar() {
           <a href="/kitchen">Kitchen</a>
           <a href="/travel">Travel</a>
           <a href="/office">Office</a>
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms-of-service">Terms of Service</a>
+          
         </nav>
       </div>
 
