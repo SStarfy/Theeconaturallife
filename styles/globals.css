@@ -33,3 +33,9 @@ main {
   margin: 0 auto;
   padding: 2rem;
 }
+
+/* Override navbar inner size to prevent clipping */
+.navbar .inner {
+  height: auto !important;
+  overflow: visible !important;
+}
