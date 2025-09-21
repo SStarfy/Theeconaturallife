@@ -147,6 +147,21 @@ export default function Navbar() {
           .title { font-size: 1.2rem; }
         }
       `}</style>
+
+      {/*
+        Global styles: set box-sizing to border-box on all elements and
+        hide horizontal overflow on the html/body elements. These rules help
+        ensure that padding doesn’t cause elements to exceed the viewport
+        width, preventing unwanted horizontal scroll bars.
+      */}
+      <style jsx global>{`
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        html, body {
+          overflow-x: hidden;
+        }
+      `}</style>
     </header>
   );
 }
