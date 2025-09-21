@@ -27,7 +27,6 @@ export default function Navbar() {
           <a href="/kitchen">Kitchen</a>
           <a href="/travel">Travel</a>
           <a href="/office">Office</a>
-          
         </nav>
       </div>
 
@@ -46,13 +45,13 @@ export default function Navbar() {
           max-width: 1280px;
           margin: 0 auto;
           width: 100%;
-          height: 60px;
+          min-height: 60px;
           padding: 0 12px;
           display: grid;
           grid-template-columns: auto minmax(0, 1fr) auto;
           align-items: center;
           gap: 12px;
-          overflow: hidden;
+          overflow: visible;
         }
 
         /* ========== BRAND ========== */
@@ -106,10 +105,8 @@ export default function Navbar() {
           gap: 16px;
           font-size: 0.95rem;
           font-weight: 500;
-            flex-wrap: wrap;
-            
           color: #374151;
-       
+          flex-wrap: wrap;
         }
         .links a {
           text-decoration: none;
@@ -140,7 +137,7 @@ export default function Navbar() {
         @media (max-width: 900px) {
           .inner {
             grid-template-columns: 1fr 1fr;
-            height: 58px;
+            min-height: 58px;
             padding: 0 10px;
             gap: 10px;
           }
