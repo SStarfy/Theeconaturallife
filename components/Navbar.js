@@ -39,17 +39,19 @@ export default function Navbar() {
           background: rgba(255, 255, 255, 0.96);
           backdrop-filter: blur(6px);
           border-bottom: 1px solid #e5e7eb;
+          overflow-x: hidden; /* 🚫 stop bottom scroll */
         }
         .inner {
-          /* edge-to-edge feel */
-          max-width: none;
+          max-width: 1280px;   /* ✅ centered container */
+          margin: 0 auto;
           width: 100%;
-          height: 60px;                /* tighter height */
-          padding: 0 12px;             /* closer to edges */
+          height: 60px;
+          padding: 0 12px;
           display: grid;
-          grid-template-columns: auto minmax(200px, 520px) auto;
+          grid-template-columns: auto minmax(0, 1fr) auto; /* ✅ search can shrink */
           align-items: center;
           gap: 12px;
+          overflow: hidden;
         }
 
         /* ========== BRAND ========== */
@@ -67,7 +69,6 @@ export default function Navbar() {
         }
         .accent { color: #2e7d32; }
         .tagline {
-          margin-top: 0;
           font-size: 0.76rem;
           color: #6b7280;
         }
@@ -77,9 +78,11 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           width: 100%;
+          min-width: 0; /* ✅ prevents overflow */
         }
         .search input {
           width: 100%;
+          min-width: 0; /* ✅ allows shrink */
           height: 36px;
           padding: 0 12px;
           border: 1px solid #d1d5db;
@@ -96,13 +99,14 @@ export default function Navbar() {
           box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
         }
 
-        /* ========== LINKS ========== */
+        /* ========== LINKS (with underline) ========== */
         .links {
           display: flex;
-          gap: 16px;                    /* slightly tighter gap */
+          gap: 16px;
           font-size: 0.95rem;
           font-weight: 500;
           color: #374151;
+          white-space: nowrap;
         }
         .links a {
           text-decoration: none;
@@ -113,7 +117,6 @@ export default function Navbar() {
           transition: color 0.18s ease;
         }
         .links a:hover { color: #166534; }
-        /* slim underline animation */
         .links a::after {
           content: "";
           position: absolute;
@@ -139,8 +142,8 @@ export default function Navbar() {
             gap: 10px;
           }
           .search { grid-column: 1 / -1; order: 3; }
-          .links { display: none; } /* keep it clean on small screens */
-          .tagline { display: none; } /* save space */
+          .links { display: none; }
+          .tagline { display: none; }
           .title { font-size: 1.2rem; }
         }
       `}</style>
