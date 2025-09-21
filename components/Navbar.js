@@ -31,7 +31,7 @@ export default function Navbar() {
       </div>
 
       <style jsx>{`
-        /* ========== BAR ========== */
+        /* BAR */
         .navbar {
           position: sticky;
           top: 0;
@@ -39,75 +39,56 @@ export default function Navbar() {
           background: rgba(255, 255, 255, 0.96);
           backdrop-filter: blur(6px);
           border-bottom: 1px solid #e5e7eb;
-          overflow-x: hidden; /* 🚫 stop bottom scroll */
+          overflow-x: hidden; /* keep the PAGE from scrolling sideways */
         }
         .inner {
-          max-width: 1280px;   /* ✅ centered container */
+          max-width: 1280px;
           margin: 0 auto;
           width: 100%;
           height: 60px;
           padding: 0 12px;
           display: grid;
-          grid-template-columns: auto minmax(0, 1fr) auto; /* ✅ search can shrink */
+          grid-template-columns: auto minmax(0, 1fr) auto;
           align-items: center;
           gap: 12px;
-          overflow: hidden;
+          /* IMPORTANT: let children (nav) manage their own overflow */
+          overflow: visible;
         }
 
-        /* ========== BRAND ========== */
-        .brand {
-          display: flex;
-          flex-direction: column;
-          line-height: 1.05;
-          text-decoration: none;
-        }
-        .title {
-          font-size: 1.28rem;
-          font-weight: 800;
-          color: #111827;
-          letter-spacing: -0.01em;
-        }
+        /* BRAND */
+        .brand { display: flex; flex-direction: column; line-height: 1.05; text-decoration: none; }
+        .title { font-size: 1.28rem; font-weight: 800; color: #111827; letter-spacing: -0.01em; }
         .accent { color: #2e7d32; }
-        .tagline {
-          font-size: 0.76rem;
-          color: #6b7280;
-        }
+        .tagline { font-size: 0.76rem; color: #6b7280; }
 
-        /* ========== SEARCH ========== */
-        .search {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          min-width: 0; /* ✅ prevents overflow */
-        }
+        /* SEARCH */
+        .search { display: flex; align-items: center; width: 100%; min-width: 0; }
         .search input {
-          width: 100%;
-          min-width: 0; /* ✅ allows shrink */
-          height: 36px;
-          padding: 0 12px;
-          border: 1px solid #d1d5db;
-          border-radius: 10px;
-          background: #ffffff;
-          color: #111827;
-          font-size: 0.95rem;
-          outline: none;
-          transition: border-color 160ms ease, box-shadow 160ms ease;
+          width: 100%; min-width: 0; height: 36px; padding: 0 12px;
+          border: 1px solid #d1d5db; border-radius: 10px; background: #fff; color: #111827; font-size: 0.95rem;
+          transition: border-color 160ms ease, box-shadow 160ms ease; outline: none;
         }
         .search input::placeholder { color: #9ca3af; }
-        .search input:focus {
-          border-color: #22c55e;
-          box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
-        }
+        .search input:focus { border-color: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,0.18); }
 
-        /* ========== LINKS (with underline) ========== */
+        /* LINKS — make the NAV scroll inside itself if it needs more room */
         .links {
           display: flex;
-          gap: 16px;
+          gap: 12px;                 /* slightly tighter to fit more */
           font-size: 0.95rem;
           font-weight: 500;
           color: #374151;
           white-space: nowrap;
+          overflow-x: auto;          /* 👈 horizontal scroll just for the nav */
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 2px;       /* room for underline */
+          scroll-snap-type: x proximity;
+          /* hide scrollbar (optional) */
+          scrollbar-width: none;     /* Firefox */
+          mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
         }
+        .links::-webkit-scrollbar { display: none; } /* WebKit */
+
         .links a {
           text-decoration: none;
           color: inherit;
@@ -115,38 +96,27 @@ export default function Navbar() {
           border-radius: 8px;
           position: relative;
           transition: color 0.18s ease;
+          scroll-snap-align: start;
         }
         .links a:hover { color: #166534; }
         .links a::after {
           content: "";
           position: absolute;
-          left: 6px;
-          right: 6px;
-          bottom: 4px;
-          height: 2px;
-          background: #16a34a;
-          border-radius: 999px;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 180ms ease;
-          opacity: 0.9;
+          left: 6px; right: 6px; bottom: 4px;
+          height: 2px; background: #16a34a; border-radius: 999px;
+          transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; opacity: 0.9;
         }
         .links a:hover::after { transform: scaleX(1); }
 
-        /* ========== RESPONSIVE ========== */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-          .inner {
-            grid-template-columns: 1fr 1fr;
-            height: 58px;
-            padding: 0 10px;
-            gap: 10px;
-          }
+          .inner { grid-template-columns: 1fr 1fr; height: 58px; padding: 0 10px; gap: 10px; }
           .search { grid-column: 1 / -1; order: 3; }
-          .links { display: none; }
+          .links { display: none; }  /* keep it clean on small screens */
           .tagline { display: none; }
           .title { font-size: 1.2rem; }
         }
       `}</style>
     </header>
-  )
+  );
 }
