@@ -7,6 +7,11 @@ export default function Card({ title, description, href = "#" }) {
         padding: "24px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
         transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
+
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-4px)";
