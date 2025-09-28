@@ -10,6 +10,8 @@ export default function Card({ title, description, href = "#" }) {
                 display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
+            alignItems: "flex-start",
+
         height: "100%",
 
       }}
@@ -42,6 +44,8 @@ export default function Card({ title, description, href = "#" }) {
           fontWeight: "500",
           transition: "background 0.2s ease",
                   alignSelf: "flex-start",
+
+                  flex: "0 0 auto",
 
         }}
         onMouseEnter={(e) => (e.currentTarget.style.background = "#276749")}
