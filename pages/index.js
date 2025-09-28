@@ -48,6 +48,9 @@ export default function Home() {
           borderTop: "1px solid #ddd",
           textAlign: "center",
           fontSize: "14px",
+                  maxWidth: "1200px",
+        margin: "0 auto",
+
           color: "#555",
         }}
       >
