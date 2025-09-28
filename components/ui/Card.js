@@ -41,8 +41,12 @@ export default function Card({ title, description, href = "#" }) {
           textDecoration: "none",
           fontWeight: "500",
           transition: "background 0.2s ease",
+                  alignSelf: "flex-start",
+
         }}
         onMouseEnter={(e) => (e.currentTarget.style.background = "#276749")}
+
+
         onMouseLeave={(e) => (e.currentTarget.style.background = "#2f855a")}
       >
         Buy on Amazon
