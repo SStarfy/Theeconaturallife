@@ -31,9 +31,11 @@ a:hover {
 }
 
 main {
-  max-width: 900px;
+  
   margin: 0 auto;
   padding: 2rem;
+    align-items: center;
+
 }
 
 /* Ensure padding and border are included in element width calculations */
