@@ -25,6 +25,7 @@ export default function Navbar() {
           <a href="/cleaning">Cleaning</a>
           <a href="/personal-care">Personal Care</a>
           <a href="/kitchen">Kitchen</a>
+                <a href="/eco-products">Eco Products</a>
           <a href="/travel">Travel</a>
           <a href="/office">Office</a>
         </nav>
