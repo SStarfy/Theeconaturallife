@@ -12,8 +12,5 @@
     "react": "latest",
     "react-dom": "latest",
     "framer-motion": "latest",
-    "lucide-react": "latest",
-    "@swc/core": "latest",
-    "@swc/helpers": "latest"
-  }
-}
+        "lucide-react": "latest"
+    
