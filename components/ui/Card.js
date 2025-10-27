@@ -1,4 +1,4 @@
-export default function Card({ title, description, href = "#" }) {
+export default function Card({ title, description, notes, href = "#" }) {
   return (
     <div
       style={{
@@ -7,13 +7,11 @@ export default function Card({ title, description, href = "#" }) {
         padding: "24px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
         transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                display: "flex",
+        display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-            alignItems: "flex-start",
-
+        alignItems: "flex-start",
         height: "100%",
-
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-4px)";
@@ -27,9 +25,14 @@ export default function Card({ title, description, href = "#" }) {
       <h3 style={{ marginBottom: "12px", fontSize: "1.25rem", fontWeight: "600" }}>
         {title}
       </h3>
-      <p style={{ marginBottom: "20px", color: "#555", lineHeight: "1.5" }}>
+      <p style={{ marginBottom: notes ? "12px" : "20px", color: "#555", lineHeight: "1.5" }}>
         {description}
       </p>
+      {notes && (
+        <p style={{ marginBottom: "20px", color: "#777", lineHeight: "1.5" }}>
+          {notes}
+        </p>
+      )}
       <a
         href={href}
         target="_blank"
@@ -42,15 +45,9 @@ export default function Card({ title, description, href = "#" }) {
           borderRadius: "8px",
           textDecoration: "none",
           fontWeight: "500",
-          transition: "background 0.2s ease",
-                  alignSelf: "flex-start",
-
-                  flex: "0 0 auto",
-
+          alignSelf: "flex-start",
         }}
         onMouseEnter={(e) => (e.currentTarget.style.background = "#276749")}
-
-
         onMouseLeave={(e) => (e.currentTarget.style.background = "#2f855a")}
       >
         Buy on Amazon
