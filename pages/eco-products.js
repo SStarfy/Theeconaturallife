@@ -77,7 +77,7 @@ export default function EcoProductsPage() {
             {section.items.map((item) => (
               <div
                 key={item.name}
-                className="rounded-2xl shadow-md p-6 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-700"
+                className="rrounded-3xl p-6 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-700 shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{item.name}</h3>
