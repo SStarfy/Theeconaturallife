@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from '../components/ui/Card';
 
 export default function PersonalCare() {
@@ -26,20 +27,51 @@ export default function PersonalCare() {
       notes: 'Salon-quality shampoo bar with no sulfates or parabens; packaged in compostable paper; no plastic bottle.',
       url: 'https://www.amazon.com/Ethique-Everyday-Shampoo-shiny-Vitamin/dp/B09G8RXV8B',
     },
+    {
+      name: 'EcoRoots Deodorant',
+      description: 'Natural zero-waste deodorant stick',
+      notes: 'Aluminum-free and cruelty-free; comes in compostable paper tube packaging.',
+      url: 'https://www.amazon.com/EcoRoots-Natural-Deodorant-Plastic-Free/dp/B09Q8TZPMR',
+    },
+    {
+      name: 'HiBAR Solid Conditioner Bar',
+      description: 'Plastic-free solid conditioner',
+      notes: 'Formulated with coconut oil and shea butter; replaces bottled conditioner; no parabens or phthalates.',
+      url: 'https://www.amazon.com/HiBAR-Plastic-Free-Moisturize-Conditioner/dp/B07TZTQ2VL',
+    },
+    {
+      name: 'Etee Silk Dental Floss',
+      description: 'Refillable silk floss in glass jar',
+      notes: 'Plastic-free, compostable silk floss with natural candelilla wax coating.',
+      url: 'https://www.amazon.com/Etee-Plastic-Free-Silk-Dental-Floss/dp/B08V8H7P4Z',
+    },
+    {
+      name: 'Ethique Body Wash Bar',
+      description: 'Zero-waste body wash bar',
+      notes: 'Hydrating coconut and lime formula; fully compostable packaging.',
+      url: 'https://www.amazon.com/Ethique-Plastic-Free-Bodywash-Coconut-Lime/dp/B07WG1SW8T',
+    },
+    {
+      name: 'Leaf Razor Starter Kit',
+      description: 'Luxury metal razor starter kit',
+      notes: 'Refillable, durable, and zero waste; made from stainless steel.',
+      url: 'https://www.amazon.com/Leaf-Razor-Stainless-Steel-Reusable/dp/B07Y9BVFYC',
+    },
   ];
 
   return (
-    <div className="mx-auto max-w-5xl py-10 px-6">
-      <h1 className="text-4xl font-bold mb-8">Personal Care</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="mx-auto max-w-6xl py-10 px-6">
+      <h1 className="text-4xl font-bold mb-8 text-center">Personal Care</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((item) => (
-          <Card
-            key={item.name}
-            title={item.name}
-            description={item.description}
-            notes={item.notes}
-            href={item.url}
-          />
+          <div key={item.name} className="flex">
+            <Card
+              title={item.name}
+              description={item.description}
+              notes={item.notes}
+              href={item.url}
+            />
+          </div>
         ))}
       </div>
     </div>
