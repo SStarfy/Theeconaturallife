@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '../components/ui/Card';
 
 export default function PersonalCare() {
   const items = [
@@ -62,21 +61,33 @@ export default function PersonalCare() {
   return (
     <div className="mx-auto max-w-5xl py-10 px-6">
       <h1 className="text-4xl font-bold mb-8 text-center">Personal Care</h1>
-      {/*
-        Use a responsive grid that automatically fits as many cards as possible
-        within the available space. Each card will have a minimum width of
-        200px and expand to fill the remaining space. This creates smaller,
-        cube-like card layouts that look consistent across screen sizes.
-      */}
       <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
         {items.map((item) => (
-          <div key={item.name} className="flex">
-            <Card
-              title={item.name}
-              description={item.description}
-              notes={item.notes}
-              href={item.url}
-            />
+          <div
+            key={item.name}
+            className="rounded-xl p-4 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-700 shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg"
+          >
+            <div>
+              <h3 className="text-lg font-semibold mb-1 text-gray-900 dark:text-white">{item.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                {item.description}
+              </p>
+              <p className="text-sm text-gray-800 dark:text-gray-200">
+                {item.notes}
+              </p>
+            </div>
+            <div className="mt-4">
+              <a
+                href={item.url}
+                target="_blank"
+                rel="sponsored nofollow"
+                className="inline-block"
+              >
+                <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium shadow-sm">
+                  Buy on Amazon
+                </button>
+              </a>
+            </div>
           </div>
         ))}
       </div>
