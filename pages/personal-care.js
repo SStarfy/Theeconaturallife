@@ -60,9 +60,15 @@ export default function PersonalCare() {
   ];
 
   return (
-    <div className="mx-auto max-w-6xl py-10 px-6">
+    <div className="mx-auto max-w-5xl py-10 px-6">
       <h1 className="text-4xl font-bold mb-8 text-center">Personal Care</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/*
+        Use a responsive grid that automatically fits as many cards as possible
+        within the available space. Each card will have a minimum width of
+        200px and expand to fill the remaining space. This creates smaller,
+        cube-like card layouts that look consistent across screen sizes.
+      */}
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
         {items.map((item) => (
           <div key={item.name} className="flex">
             <Card

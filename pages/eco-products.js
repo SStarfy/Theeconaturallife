@@ -25,11 +25,11 @@ export default function EcoProductsPage() {
       {products.map((section) => (
         <div key={section.category} className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">{section.category}</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
             {section.items.map((item) => (
               <div
                 key={item.name}
-                className="rounded-3xl p-6 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-700 shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl p-4 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200 dark:border-gray-700 shadow-md transition-transform transform hover:-translate-y-1 hover:shadow-lg"
               >
                 <div>
                   <h3 className="text-xl font-semibold mb-1">{item.name}</h3>
