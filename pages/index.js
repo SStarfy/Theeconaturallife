@@ -74,7 +74,13 @@ export default function Home() {
           >
             Terms of Service
           </a>
-          |
+       <a
+  href="/donate"
+  style={{ margin: "0 10px", color: "#2f855a", textDecoration: "none" }}
+>
+  Support
+</a>
+   |
           <a
             href="mailto:contact@econaturallife.com"
             style={{ margin: "0 10px", color: "#2f855a", textDecoration: "none" }}
