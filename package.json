@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start"
   },
-  "next": "15.5.7",
+  "  "dependencies": {
+    "next": "15.5.7",
     "react": "latest",
     "react-dom": "latest",
     "framer-motion": "latest",
