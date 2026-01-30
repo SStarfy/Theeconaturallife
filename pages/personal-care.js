@@ -61,7 +61,7 @@ export default function PersonalCare() {
   return (
     <div className="mx-auto max-w-5xl py-10 px-6">
       <h1 className="text-4xl font-bold mb-8 text-center">Personal Care</h1>
-      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+<div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <div
             key={item.name}
